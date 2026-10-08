@@ -1,0 +1,10 @@
+{
+  "task": "tulu_code",
+  "size": "30k",
+  "source": "allenai/tulu-3-sft-personas-code/data/train-00000-of-00001.parquet",
+  "source_rows": 30000,
+  "exact_duplicates": 5,
+  "rows": 29995,
+  "prompt_style": "plain",
+  "parquet": "data/tulu_code/30k/train.parquet"
+}

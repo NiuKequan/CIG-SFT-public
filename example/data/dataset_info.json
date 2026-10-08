@@ -1,0 +1,38 @@
+{
+  "cig_sft_numina_cot_100k": {
+    "columns": {
+      "prompt": "prompt",
+      "query": null,
+      "response": "response"
+    },
+    "file_name": "numina_cot/100k/train.parquet",
+    "formatting": "alpaca"
+  },
+  "cig_sft_numina_cot_10k": {
+    "columns": {
+      "prompt": "prompt",
+      "query": null,
+      "response": "response"
+    },
+    "file_name": "numina_cot/10k/train.parquet",
+    "formatting": "alpaca"
+  },
+  "cig_sft_numina_cot_30k": {
+    "columns": {
+      "prompt": "prompt",
+      "query": null,
+      "response": "response"
+    },
+    "file_name": "numina_cot/30k/train.parquet",
+    "formatting": "alpaca"
+  },
+  "cig_sft_tulu_code_30k": {
+    "columns": {
+      "prompt": "prompt",
+      "query": null,
+      "response": "response"
+    },
+    "file_name": "tulu_code/30k/train.parquet",
+    "formatting": "alpaca"
+  }
+}

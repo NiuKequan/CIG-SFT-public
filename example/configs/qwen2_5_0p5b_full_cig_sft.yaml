@@ -1,0 +1,49 @@
+### CIG-SFT quickstart on the shipped math mixture, no extra dataset download beyond the model.
+### python src/train.py example/configs/qwen2_5_0p5b_full_cig_sft.yaml
+###
+### `cig_erased_prompt` is what turns the loss on: it replaces the user message while the response is kept, so that
+### the frozen reference model can score the same response with and without the instance content. A preset name such
+### as `default`, `math`, `code` or `medical` is resolved to the matching placeholder, any other value is used as a
+### literal. See src/llamafactory/data/erased_prompt.py.
+
+### model
+model_path: Qwen/Qwen2.5-0.5B-Instruct
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+use_cig_sft_loss: true
+cig_lambda: 0.3
+cig_erased_prompt: default
+
+### dataset
+dataset: cig_sft_numina_cot_10k
+dataset_dir: example/data
+template: qwen
+cutoff_len: 2048
+max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: saves/qwen2.5-0_5b/full/cig_sft
+cig_credit_cache: saves/qwen2.5-0_5b/full/cig_sft_credit.pt
+logging_steps: 1
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+report_to: none  # choices: [none, wandb, tensorboard, swanlab, mlflow]
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-5
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000

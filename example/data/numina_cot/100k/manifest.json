@@ -1,0 +1,10 @@
+{
+  "task": "numina_cot",
+  "size": "100k",
+  "source": "chichi56/ASFT/numina_cot_100k.jsonl",
+  "source_rows": 100000,
+  "exact_duplicates": 1693,
+  "rows": 98307,
+  "prompt_style": "qwen-boxed-user",
+  "parquet": "data/numina_cot/100k/train.parquet"
+}

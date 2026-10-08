@@ -1,0 +1,50 @@
+### The recipe the paper reports: CIG-SFT on Qwen2.5-Math-1.5B / numina-cot-30k, 1 epoch, global batch 128, lr 5e-5.
+###
+### The per-token credit only depends on the frozen reference model and on fixed inputs, so it is read once before the
+### training loop and stored at `cig_credit_cache`. Point several runs that share the same data and reference model at
+### the same file and only the first one pays for it. Delete the file to force a fresh read.
+###
+### `dataset_dir` must hold a `dataset_info.json` that registers `cig_sft_numina_cot_30k` as a two column `alpaca`
+### parquet, `prompt` holding the problem followed by the task instruction and `response` the solution. Point it at your
+### own math data, or at `example/data` as `example/scripts/build_dataset.py` builds it.
+
+### model
+model_path: Qwen/Qwen2.5-Math-1.5B
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+use_cig_sft_loss: true
+cig_lambda: 0.3
+cig_erased_prompt: math  # preset, see src/llamafactory/data/erased_prompt.py
+
+### dataset
+dataset: cig_sft_numina_cot_30k
+dataset_dir: example/data
+template: qwen
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: saves/qwen2.5-math-1.5b/full/numina_cot_30k_cig_sft
+cig_credit_cache: example/data/cig_weights/qwen2.5_math_1p5b_numina_cot_30k.pt  # 权重文件生成路径
+logging_steps: 1
+save_steps: 233  # one epoch of 29830 rows at a global batch of 128
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: true
+report_to: none  # choices: [none, wandb, tensorboard, swanlab, mlflow]
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 32  # global batch = 128
+learning_rate: 5.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000

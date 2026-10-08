@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "What Should SFT Learn? Conditional Information Gain for Generalizable Post-Training"
+type: software
+message: "If you use this software, please cite the accompanying paper."
+authors:
+  - given-names: "Yuxuan"
+    family-names: "Gu"
+  - given-names: "Kequan"
+    family-names: "Niu"
+  - given-names: "Xiaocheng"
+    family-names: "Feng"
+  - given-names: "Yun"
+    family-names: "Li"
+  - given-names: "Yiqiao"
+    family-names: "Yang"
+  - given-names: "Heyuan"
+    family-names: "Huang"
+  - given-names: "Bing"
+    family-names: "Qin"
+repository-code: "https://github.com/NiuKequan/CIG-SFT-public"
+license: "Apache-2.0"

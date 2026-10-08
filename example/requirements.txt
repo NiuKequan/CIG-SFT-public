@@ -1,0 +1,44 @@
+# Pinned dependencies of CIG-SFT, the versions every released run was trained with.
+#
+# Install with `bash example/scripts/setup_env.sh`. The pins sit at the upper bound that `pyproject.toml` allows, so a later
+# `pip install -e .` cannot move them, and `check_dependencies()` passes without `DISABLE_VERSION_CHECK=1`.
+#
+# GPU wheels: `torch==2.6.0` on PyPI is built against CUDA 12.4. On a machine whose driver is older, install torch
+# from the matching index first, e.g. `pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu121`.
+#
+# This list covers the training path. The optional extras of `pyproject.toml` that only the web UI and the HTTP API
+# need (`gradio`, `uvicorn`, `fastapi`, `sse-starlette`) and that only multimodal or modelscope downloads need
+# (`av`, `modelscope`) are left out on purpose; add them if you want `llamafactory-cli webui` or an API server.
+
+# core training stack
+torch==2.6.0
+torchvision==0.21.0
+torchaudio==2.6.0
+torchdata==0.11.0
+transformers==4.57.1
+datasets==4.0.0
+accelerate==1.11.0
+peft==0.18.1
+trl==0.24.0
+
+# imports of `llamafactory` itself, the training path only
+einops
+fire
+matplotlib
+numpy==1.26.4
+omegaconf
+packaging
+pandas
+pydantic
+pyyaml
+scipy
+sentencepiece
+tiktoken
+tyro<0.9.0
+safetensors
+hf-transfer
+protobuf
+
+# tests and style
+pytest
+ruff==0.15.5
