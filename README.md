@@ -1,9 +1,9 @@
 <div align="center">
 
-# Counterfactual Instance Gating<br>for Supervised Fine-Tuning
+# What Should SFT Learn? Conditional Information Gain for Generalizable Post-Training
 
 Yuxuan Gu* &emsp; Kequan Niu* &emsp; Xiaocheng Feng &emsp; Yun Li<br>
-Yiqiao Yang &emsp; Heyuan Huang &emsp; Bing Qin
+Yiqiao Yang &emsp; Bing Qin
 
 </div>
 
@@ -72,7 +72,7 @@ SMOKE_MODEL=/path/to/a/local/model bash example/scripts/smoke_train.sh
 ```bibtex
 @misc{gu2027cigsft,
   title  = {What Should {SFT} Learn? Conditional Information Gain for Generalizable Post-Training},
-  author = {Gu, Yuxuan and Niu, Kequan and Feng, Xiaocheng and Li, Yun and Yang, Yiqiao and Huang, Heyuan and Qin, Bing},
+  author = {Gu, Yuxuan and Niu, Kequan and Feng, Xiaocheng and Li, Yun and Yang, Yiqiao and Qin, Bing},
   year   = {2027},
   note   = {Preprint}
 }

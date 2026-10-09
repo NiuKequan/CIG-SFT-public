@@ -13,8 +13,6 @@ authors:
     family-names: "Li"
   - given-names: "Yiqiao"
     family-names: "Yang"
-  - given-names: "Heyuan"
-    family-names: "Huang"
   - given-names: "Bing"
     family-names: "Qin"
 repository-code: "https://github.com/NiuKequan/CIG-SFT-public"
