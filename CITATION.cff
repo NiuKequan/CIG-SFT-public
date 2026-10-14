@@ -2,6 +2,7 @@ cff-version: 1.2.0
 title: "What Should SFT Learn? Conditional Information Gain for Generalizable Post-Training"
 type: software
 message: "If you use this software, please cite the accompanying paper."
+date-released: "2026-10-09"
 authors:
   - given-names: "Yuxuan"
     family-names: "Gu"
@@ -15,5 +16,9 @@ authors:
     family-names: "Yang"
   - given-names: "Bing"
     family-names: "Qin"
+identifiers:
+  - description: "The accompanying paper on arXiv"
+    type: url
+    value: "https://arxiv.org/abs/2610.12995"
 repository-code: "https://github.com/NiuKequan/CIG-SFT-public"
 license: "Apache-2.0"

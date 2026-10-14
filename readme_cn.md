@@ -59,16 +59,19 @@ SMOKE_MODEL=/path/to/a/local/model bash example/scripts/smoke_train.sh
 
 ## 引用
 
+论文已发布于 [arXiv:2610.12995](https://arxiv.org/abs/2610.12995)（[PDF](https://arxiv.org/pdf/2610.12995)）。
+
 ```bibtex
-@misc{gu2027cigsft,
-  title  = {What Should {SFT} Learn? Conditional Information Gain for Generalizable Post-Training},
-  author = {Gu, Yuxuan and Niu, Kequan and Feng, Xiaocheng and Li, Yun and Yang, Yiqiao and Qin, Bing},
-  year   = {2027},
-  note   = {Preprint}
+@misc{gu2026sftlearnconditionalinformation,
+  title         = {What Should SFT Learn? Conditional Information Gain for Generalizable Post-Training},
+  author        = {Yuxuan Gu and Kequan Niu and Xiaocheng Feng and Yun Li and Yiqiao Yang and Bing Qin},
+  year          = {2026},
+  eprint        = {2610.12995},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2610.12995}
 }
 ```
-
-论文上传 arXiv 后，请将上面的条目更新为正式的 arXiv 编号。
 
 ## 许可证与发布声明
 
